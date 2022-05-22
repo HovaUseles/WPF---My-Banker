@@ -27,15 +27,20 @@ namespace WPF___My_Banker
         internal GUI_Manager manager;
         CardChoiceUC cardChoiceUC;
 
+        /// <summary>
+        /// The various states of the ATM.
+        /// </summary>
         public enum state
         {
             standby = 10,
             CustomerSelected = 20,
             CardInserted = 30,
-            PinAccepted = 40,
-            MoneyWithdrawen = 50
+            PinAccepted = 40
         };
 
+        /// <summary>
+        /// The ATM's current state
+        /// </summary>
         private state currentState;
 
         public MainWindow()
@@ -60,12 +65,19 @@ namespace WPF___My_Banker
             this.Content = new AtmUC(this);
         }
 
+        /// <summary>
+        /// Shows the card choice window
+        /// </summary>
         public void ShowCardChoice()
         {
             this.Content = cardChoiceUC;
             cardChoiceUC.PopulateCards();
         }
 
+        /// <summary>
+        /// Closes the card choice window and show the ATM
+        /// </summary>
+        /// <param name="card"></param>
         public void CloseCardChoice(CreditCard card)
         {
             manager.SetActiveCard(card);

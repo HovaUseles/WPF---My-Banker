@@ -39,7 +39,7 @@ namespace WPF___My_Banker
         }
 
         /// <summary>
-        /// 
+        /// Gets customers and adds them to the view
         /// </summary>
         public void PopulateCustomers()
         {

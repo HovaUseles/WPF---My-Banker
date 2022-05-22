@@ -52,15 +52,15 @@
                 <RowDefinition Height="88*"/>
 
             </Grid.RowDefinitions>
-            <Button x:Name="Keypad_Btn_1" Grid.Column="1" Content="1" Grid.Row="2" Click="generic_Click" />
-            <Button x:Name="Keypad_Btn_2" Grid.Column="3" Content="2" Grid.Row="2" Click="generic_Click" />
-            <Button x:Name="Keypad_Btn_3" Grid.Column="5" Content="3" Grid.Row="2" Click="generic_Click" />
-            <Button x:Name="Keypad_Btn_4" Grid.Column="1" Content="4" Grid.Row="4" Click="generic_Click" />
-            <Button x:Name="Keypad_Btn_5" Grid.Column="3" Content="5" Grid.Row="4" Click="generic_Click" />
-            <Button x:Name="Keypad_Btn_6" Grid.Column="5" Content="6" Grid.Row="4" Click="generic_Click" />
-            <Button x:Name="Keypad_Btn_7" Grid.Column="1" Content="7" Grid.Row="6" Click="generic_Click" />
-            <Button x:Name="Keypad_Btn_8" Grid.Column="3" Content="8" Grid.Row="6" Click="generic_Click" />
-            <Button x:Name="Keypad_Btn_9"  Grid.Column="5" Content="9" Grid.Row="6" Click="generic_Click" />
+            <Button x:Name="Keypad_Btn_1" Grid.Column="1" Content="1" Grid.Row="2" Click="NumberClick" />
+            <Button x:Name="Keypad_Btn_2" Grid.Column="3" Content="2" Grid.Row="2" Click="NumberClick" />
+            <Button x:Name="Keypad_Btn_3" Grid.Column="5" Content="3" Grid.Row="2" Click="NumberClick" />
+            <Button x:Name="Keypad_Btn_4" Grid.Column="1" Content="4" Grid.Row="4" Click="NumberClick" />
+            <Button x:Name="Keypad_Btn_5" Grid.Column="3" Content="5" Grid.Row="4" Click="NumberClick" />
+            <Button x:Name="Keypad_Btn_6" Grid.Column="5" Content="6" Grid.Row="4" Click="NumberClick" />
+            <Button x:Name="Keypad_Btn_7" Grid.Column="1" Content="7" Grid.Row="6" Click="NumberClick" />
+            <Button x:Name="Keypad_Btn_8" Grid.Column="3" Content="8" Grid.Row="6" Click="NumberClick" />
+            <Button x:Name="Keypad_Btn_9"  Grid.Column="5" Content="9" Grid.Row="6" Click="NumberClick" />
             <Label x:Name="Label_Code_1" Content="*" HorizontalAlignment="Center" VerticalAlignment="Center" Height="62" Width="65" Background="#FF9E9E9E" FontSize="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" FontStretch="ExtraExpanded" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
             <Label x:Name="Label_Code_2" Grid.Column="1" Content="*" HorizontalAlignment="Left" VerticalAlignment="Center" Height="62" Width="58" Background="#FF9E9E9E" FontSize="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" FontStretch="ExtraExpanded" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="3" Margin="62,0,0,0"/>
             <Label x:Name="Label_Code_3" Grid.Column="3" Content="*" HorizontalAlignment="Center" VerticalAlignment="Center" Height="62" Width="62" Background="#FF9E9E9E" FontSize="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" FontStretch="ExtraExpanded" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2"/>

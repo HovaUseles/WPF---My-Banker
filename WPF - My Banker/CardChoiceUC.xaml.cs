@@ -29,6 +29,9 @@ namespace WPF___My_Banker
             main = mainWindow;
         }
 
+        /// <summary>
+        /// Gets and displays credit cards to the card select view
+        /// </summary>
         public void PopulateCards()
         {
             List<CreditCard> cards = main.manager.GetActicveCustomer().Cards;
@@ -47,6 +50,11 @@ namespace WPF___My_Banker
             }
         }
 
+        /// <summary>
+        /// Builds the credit cards user control for the card select view
+        /// </summary>
+        /// <param name="card"></param>
+        /// <returns></returns>
         private CardUC CreateCardUC(CreditCard card)
         {
             CardUC cardUC = new CardUC(card, main);

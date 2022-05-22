@@ -30,7 +30,11 @@ namespace WPF___My_Banker
             main = mainWindow;
         }
 
-
+        /// <summary>
+        /// When card is clicked close the card select view
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_ChooseCard_Click(object sender, RoutedEventArgs e)
         {
             main.CloseCardChoice(card);

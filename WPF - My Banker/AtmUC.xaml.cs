@@ -40,6 +40,9 @@ namespace WPF___My_Banker
             ATMStateCheck();
         }
 
+        /// <summary>
+        /// Checks which state the ATM is in and calls the methods controlling the display of ATM components
+        /// </summary>
         private void ATMStateCheck()
         {
 
@@ -55,24 +58,29 @@ namespace WPF___My_Banker
             {
                 PINAccepted();
             }
-            else if (main.GetState() == MainWindow.state.MoneyWithdrawen)
-            {
-
-            }
         }
 
+        /// <summary>
+        /// Display rules when customer has been selected
+        /// </summary>
         private void CustomerSelected()
         {
             Label_MainScreenText.Content = "Please insert Card";
             Card_Intake.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Display rules when a card has been inserted
+        /// </summary>
         private void CardInserted()
         {
             Label_MainScreenText.Content = "Please type PIN code";
             Keypad.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Display rules when the PIN code has been accepted
+        /// </summary>
         private void PINAccepted()
         {
             Label_MainScreenText.Content = "How much to withdraw?";
@@ -91,47 +99,86 @@ namespace WPF___My_Banker
             Label_Right_4.Content = "1000 kr.";
         }
 
+        /// <summary>
+        /// Updates thelabel showing the balance of the account.
+        /// </summary>
         private void UpdateBalance()
         {
             Label_ScreenText2.Content = "Balance: " + main.manager.GetActiveAccount().Balance + " kr.";
         }
 
+        /// <summary>
+        /// When keypad button is clicked show the keypad window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Keypad_Click(object sender, RoutedEventArgs e)
         {
             main.ShowKeypad();
 
         }
 
+        /// <summary>
+        /// When card intake is clicked show the card choice window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Card_Intake_Click(object sender, RoutedEventArgs e)
         {
             main.ShowCardChoice();
         }
 
+        private void DisplayMoney(double amount)
+        {
+            Label_Money.Content = amount.ToString() + " kr.";
 
+        }
+
+        /// <summary>
+        /// third left side button action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Left_3_Click(object sender, RoutedEventArgs e)
         {
             double withdrawen = main.manager.WithdrawMoney(100);
-            Label_Money.Content = withdrawen.ToString();
+            DisplayMoney(withdrawen);
             UpdateBalance();
         }
 
+        /// <summary>
+        /// third right side button action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Right_3_Click(object sender, RoutedEventArgs e)
         {
             double withdrawen = main.manager.WithdrawMoney(200);
-            Label_Money.Content = withdrawen.ToString();
-            UpdateBalance();
-        }
-        private void Btn_Left_4_Click(object sender, RoutedEventArgs e)
-        {
-            double withdrawen = main.manager.WithdrawMoney(500);
-            Label_Money.Content = withdrawen.ToString();
+            DisplayMoney(withdrawen); 
             UpdateBalance();
         }
 
+        /// <summary>
+        /// fourth left side button action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Btn_Left_4_Click(object sender, RoutedEventArgs e)
+        {
+            double withdrawen = main.manager.WithdrawMoney(500);
+            DisplayMoney(withdrawen);
+            UpdateBalance();
+        }
+
+        /// <summary>
+        /// fourth right side button action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Right_4_Click(object sender, RoutedEventArgs e)
         {
             double withdrawen = main.manager.WithdrawMoney(1000);
-            Label_Money.Content = withdrawen.ToString();
+            DisplayMoney(withdrawen);
             UpdateBalance();
         }
     }
